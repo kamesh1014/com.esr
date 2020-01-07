@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 @RestController
-public class TestController {
+public class TestController  throws UnknownHostException  {
 	
 	@Qualifier("jdbcthinkService")
 	@Autowired
@@ -31,23 +31,22 @@ public class TestController {
 	
 	@RequestMapping("/hello")
 	public String hello() {
-		String hostname = null;
 		
-		InetAddress ip= null;;
-	        
-	        try {
-	            ip = InetAddress.getLocalHost();
-	            hostname = ip.getHostName();
-	            System.out.println("Your current IP address : " + ip);
-	            System.out.println("Your current Hostname : " + hostname);
-	 
-	        } catch (UnknownHostException e) {
-	 
-	            e.printStackTrace();
-	        }
+		String systemipaddress = ""; 
+        try { 
+            URL url_name = new URL("http://bot.whatismyipaddress.com"); 
+  
+            BufferedReader sc = new BufferedReader( 
+                new InputStreamReader(url_name.openStream())); 
+  
+            // reads system IPAddress 
+            systemipaddress = sc.readLine().trim(); 
+        } 
+        catch (Exception e) { 
+            systemipaddress = "Cannot Execute Properly"; 
+        } 
 		
-		
-		return "welcome "+hostname+ ip.toString();
+		return "welcome "+systemipaddress;
 	}
 	
 	public void addViewControllers(ViewControllerRegistry registry) {
