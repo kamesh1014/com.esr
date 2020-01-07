@@ -33,7 +33,7 @@ public class TestController{
 	LoginService loginService;
 	
 	@RequestMapping("/hello")
-	public String hello() {
+	public String hello() throws UnknownHostException {
 		
 		String systemipaddress = ""; 
         try { 
