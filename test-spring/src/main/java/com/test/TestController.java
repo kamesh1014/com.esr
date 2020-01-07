@@ -45,7 +45,7 @@ public class TestController{
             // reads system IPAddress 
             systemipaddress = sc.readLine().trim(); 
         } 
-        catch (UnknownHostException e) { 
+        catch (Exception e) { 
             systemipaddress = "Cannot Execute Properly"; 
         } 
 		
