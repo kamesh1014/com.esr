@@ -7,7 +7,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 
 //embedded tomcat 
-/*@SpringBootApplication
+@SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
@@ -16,18 +16,4 @@ public class Application {
 	}
 
 }
-*/
 
-//external tomcat
-
-@SpringBootApplication
-public class Application extends SpringBootServletInitializer {
-  public static void main(String[] args) {
-      SpringApplication.run(Application.class, args);
-  }
-
-  @Override
-  protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-      return builder.sources(Application.class);
-  }
-}
