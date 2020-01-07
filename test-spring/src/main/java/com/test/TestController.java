@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 @RestController
-public class TestController  throws UnknownHostException  {
+public class TestController{
 	
 	@Qualifier("jdbcthinkService")
 	@Autowired
@@ -42,7 +42,7 @@ public class TestController  throws UnknownHostException  {
             // reads system IPAddress 
             systemipaddress = sc.readLine().trim(); 
         } 
-        catch (Exception e) { 
+        catch (UnknownHostException e) { 
             systemipaddress = "Cannot Execute Properly"; 
         } 
 		
