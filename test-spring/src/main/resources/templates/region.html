@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Location</title>
+</head>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+ background-image: url('bg.jpg');
+  
+  background-repeat: no-repeat;
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+
+  background-size: cover;
+
+}
+
+</style>
+<body>
+
+<center><h1 style="text-align:center;color:orange">REGION</h1></center>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<h1 style="text-align:center;color:orange" th:text="${region}"></h1>
+
+<div align="center">
+  <button class="button" onclick="location.href='/map'">MAP</button>
+</div>
+
+</body>
+</html>
